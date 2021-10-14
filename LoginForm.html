@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>LoginForm</title>
+<link rel="stylesheet" href="CSSforLoginForm.css">
+<script>
+	
+	let submitbutton = document.getElementById('btn');
+	submitbutton.addEventListener('click', function(e){
+		let username = document.getElementById('username');
+		let password = document.getElementById('password');
+		username = username.value;
+		localStorage.setItem('username', username);
+	
+		password = password.value;
+		localStorage.setItem('password', password);
+		console.log(password);
+		document.write(localStorage.getItem('username'));
+		document.write(localStorage.getItem('password'));
+	});
+	
+</script>
+</head>
+
+<body>
+	<form>
+		<div class="Instructions">
+			<p1>Insert username and password credentials.</p1>
+		</div>
+		<div class="userName">
+			<label for="username">Username</label>
+			<input id="username" name="username">
+		</div>
+		<div class="Password">
+			<label for="password">Password</label>
+			<input id="password" name="password">
+		</div>
+		<div class="Submit">
+			<button type="submit" id="btn">Submit</button>
+		</div>
+		
+	</form>
+</body>
+</html>
